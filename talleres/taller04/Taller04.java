@@ -2,7 +2,7 @@ package proyecto;
 
 /**
  *
- * @author Juan Pablo Restrepo, Juan José Sanchez
+ * @author Juan Pablo Restrepo, Juan José Sanchez, Mauricio Toro
  */
 public class Taller04 {
        
