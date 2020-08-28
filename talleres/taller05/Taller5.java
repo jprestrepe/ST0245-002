@@ -21,10 +21,7 @@ public class Taller5 {
         }
     }
 
- 
- 
-    // punto de insertion sort
-    public static int insertinSort(int[] array) {
+    public static int insertinSort(int[] array){ //O(n^2)
         return noSe(0, 1, array);
     }
 
