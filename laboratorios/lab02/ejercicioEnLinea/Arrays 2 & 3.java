@@ -1,3 +1,46 @@
+//Arrays 2
+public int countEvens(int[]nums){
+    return countEvenss (nums,0);
+}
+    public int countEvenss(int[] nums,int a) {
+        if(a==nums.length){
+        return 0;
+        }
+        if(nums[a]%2==0){
+        return 1+countEvenss(nums,a+1);
+        }
+        return countEvenss(nums,a+1);
+    }
+
+
+
+public int centeredAverage(int[] nums) {
+        return noSe(0, 1, nums);
+    }
+
+    public int noSe(int a, int b, int[] array) {
+        int p = 0;
+        int y = 0;
+        if (a == array.length - 1) {
+            for (int z = 0; z <= array.length - 1; z++) {
+                y = y + array[z];
+            }
+            y = y - array[0] - array[array.length - 1];
+            p = (y) / (array.length - 2);
+            return (p);
+        }
+        int Aux = array[a];
+        if (array[b] < array[a]) {
+            array[a] = array[b];
+            array[b] = Aux;
+            if (a - 1 < 0) {
+                return noSe(a + 1, b + 1, array);
+            }
+            return noSe(a - 1, b - 1, array);
+        }
+        return noSe(a + 1, b + 1, array);
+    }
+
 
 
 
