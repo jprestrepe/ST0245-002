@@ -1,6 +1,6 @@
 /**
  * Laboratorio 2 de Estructuras de Datos 1
- * Código sacado de: https: https://www.geeksforgeeks.org/insertion-sort/ y https://www.baeldung.com/java-merge-sort respectivamente.
+ * Código sacado de: https://www.baeldung.com/java-merge-sort 
  * @author Mauricio Toro, Juan Pablo Restrepo, Juan José Sánchez
  */
 
