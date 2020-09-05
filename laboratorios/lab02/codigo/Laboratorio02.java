@@ -4,17 +4,25 @@
  * @author Mauricio Toro, Juan Pablo Restrepo, Juan José Sánchez
  */
 
-public class Laboratorio02{   
-  public static void insertionSort(int[] A){ //T(n) = O(n^2)
-  for (int i = 1; i < A.length; i++) {  
-  int key = A[i];     
-  int j = i-1;    
-  while(j >= 0 && A[j] > key){ 
-  A[j+1] = A[j];  
-  j--;
- }
-  A[j+1] = key; 
- }
+public class insert {// punto de insertion sort    Complejidada de O(n^2)
+    public static int insertonSort(int[] array) {
+        return noSe(0, 1, array);
+    }
+    public static int noSe(int a, int b, int[] array) {
+        if (a == array.length - 1) {
+            return 0;
+        }
+        int Aux = array[a];
+        if (array[b] < array[a]) {
+            array[a] = array[b];
+            array[b] = Aux;
+            if (a - 1 < 0) {
+                return noSe(a + 1, b + 1, array);
+            }
+            return noSe(a - 1, b - 1, array);
+        }
+        return noSe(a + 1, b + 1, array);
+    }
 }
 
    public static void mergeSort(int[] a, int n){ // O(n)
