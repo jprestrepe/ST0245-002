@@ -1,4 +1,5 @@
 //Arrays 2
+public class uno{
 public int countEvens(int[]nums){
     return countEvenss (nums,0);
 }
@@ -11,9 +12,9 @@ public int countEvens(int[]nums){
         }
         return countEvenss(nums,a+1);
     }
+}
 
-
-
+public class dos{
 public int centeredAverage(int[] nums) {
         return noSe(0, 1, nums);
     }
@@ -40,7 +41,68 @@ public int centeredAverage(int[] nums) {
         }
         return noSe(a + 1, b + 1, array);
     }
+}
 
+
+
+public class tres {
+  public int sum13(int[] nums) {
+    return Algo(nums, 0);
+  }
+
+  public int Algo(int[] nums, int a) {
+    if (a >= nums.length) {
+      return 0;
+    }
+    if (nums[a] == 13) {
+      if (a + 1 > nums.length - 1 || nums[a + 1] == 13) {
+        return Algo(nums, a + 1);
+      }
+      return -nums[a + 1] + Algo(nums, a + 1);
+    }
+
+    return nums[a] + Algo(nums, a + 1);
+
+  }}
+
+
+
+public class cuatro{
+        public int sum67(int[] nums) {
+        return Algo(nums, 0, true);
+    }
+
+    public int Algo(int[] nums, int a, boolean nada) {
+        if (a >= nums.length) {
+            return 0;
+        }
+        if (nums[a] == 7 && nada == false) {|
+            return Algo(nums, a + 1, true);
+        }
+        if (nums[a] == 6 || nada == false) {
+            return Algo(nums, a + 1, false);
+        }
+        return nums[a] + Algo(nums, a + 1, true);
+    }
+
+    
+}
+
+public class cinco{
+        public boolean has22(int[] nums) {
+        return Algo(nums, 0, false);
+    }
+
+    public boolean Algo(int[] nums, int a, boolean nada) {
+        if (a > nums.length) {
+            return nada;
+        }
+        if (a + 1 <= nums.length - 1 && ((nums[a] == 2) && (nums[a + 1] == 2)))
+            return true;
+        return Algo(nums, a + 1, false);
+    }
+
+}
 
 
 
