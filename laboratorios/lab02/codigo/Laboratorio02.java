@@ -4,7 +4,9 @@
  * @author Mauricio Toro, Juan Pablo Restrepo, Juan José Sánchez
  */
 
-public class insert {// punto de insertion sort    Complejidada de O(n^2)
+public class Lab02 {
+    
+    // punto de insertion sort    Complejidada de O(n^2)
     public static int insertonSort(int[] array) {
         return noSe(0, 1, array);
     }
@@ -23,7 +25,7 @@ public class insert {// punto de insertion sort    Complejidada de O(n^2)
         }
         return noSe(a + 1, b + 1, array);
     }
-}
+
 
    public static void mergeSort(int[] a, int n){ // O(n)
    if (n < 2) {
