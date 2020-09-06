@@ -6,8 +6,8 @@
 
 public class Lab02 {
     
-    // punto de insertion sort    Complejidada de O(n^2)
-    public static int insertonSort(int[] array) {
+    
+    public static int insertonSort(int[] array){ // O(n^2)
         return noSe(0, 1, array);
     }
     public static int noSe(int a, int b, int[] array) {
@@ -27,7 +27,7 @@ public class Lab02 {
     }
 
 
-   public static void mergeSort(int[] a, int n){ // O(n)
+   public static void mergeSort(int[] a, int n){ // O(n long n)
    if (n < 2) {
    return;
   }
