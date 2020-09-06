@@ -4,7 +4,7 @@
  * @author Mauricio Toro, Juan Pablo Restrepo, Juan José Sánchez
  */
 
-public class Lab02 {
+public class Laboratorio02 {
     
     
     public static int insertonSort(int[] array){ // O(n^2)
