@@ -94,7 +94,7 @@ public class Test{
         for(String[] item : arrAlmacenes){
             almacenes.offer(item);
         }            
-        Taller8.asignarSolicitudes(neveras,almacenes);
+        almacenDeNeveras.asignarSolicitudes(neveras,almacenes);
     }
     
     public static void main(String[] args){
