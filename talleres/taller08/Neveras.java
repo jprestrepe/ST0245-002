@@ -16,6 +16,6 @@ public class Nevera
 	
 	@Override
 	public String toString(){
-		return ("+this.codigo+", "+this.marca+");
+		return "("+this.codigo+", '"+this.marca+"')";
 	}
 }
