@@ -3,6 +3,9 @@ package Laboratorio3;
 import java.util.*;
 import java.io.*;
 
+/**
+ * @author Juan Pablo Restrepo, Juan José Sanchez
+ */
 
 public class MapeoCiudad{
 
