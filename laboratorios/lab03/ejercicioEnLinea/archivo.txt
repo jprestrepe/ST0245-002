@@ -1,1 +1,44 @@
-Archivo adicional para permitir la creación de carpetas
+Archivo adicional para permitir la creaciÃ³n de carpetas
+import java.util.*;
+public class TecladoRoto {
+
+
+    public static String brokenKb(String s) {
+        LinkedList<String> texto = new LinkedList<>();
+        boolean Final = true;
+        int k = 0;
+        for (int i = 0; i < b.length(); i++) {
+            if (s.charAt(i) == '[') {
+                if (Final) {
+                    texto.addLast(s.substring(k,i));
+                } else {
+                    texto.addFirst(s.substring(k,i));
+                }
+
+                k = i + 1;
+                Final = false;
+            }
+            if (s.charAt(i) == ']') {
+                if (Final) {
+                    texto.addLast(s.substring(k,i));
+                } else {
+                    texto.addFirst(s.substring(k,i));
+                }
+
+                k = i + 1;
+                Final = true;
+            }
+        }
+
+        if (Final) {
+            texto.addLast(s.substring(k));
+        } else {
+            texto.addFirst(s.substring(k));
+        }
+        String textoFinal= "";
+        for (String a: texto) {
+            textoFinal+= a;
+        }
+        return textoFinal;
+    }
+}
