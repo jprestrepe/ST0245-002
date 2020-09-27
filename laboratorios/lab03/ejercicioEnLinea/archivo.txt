@@ -42,3 +42,6 @@ public class TecladoRoto {
         return textoFinal;
     }
 }
+
+//punto 3.3
+ el codigo tiene complejidad O(n)
