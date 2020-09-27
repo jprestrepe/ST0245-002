@@ -47,6 +47,6 @@ public class MapeoCiudad{
             cont++;
         }
         leer.close();
-        System.out.println("Se han leído" + cont + " ubicaciones");
+        System.out.println("Se identificaron " + cont + " ubicaciones exitosamente");
     }
 }
