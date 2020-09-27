@@ -1,9 +1,9 @@
 Archivo adicional para permitir la creación de carpetas
-import java.util.*;
+   import java.util.*;
 public class TecladoRoto {
 
 //punto 2.1
-    public static String brokenKb(String s) {
+    public static void brokenKb(String s) {
         LinkedList<String> texto = new LinkedList<>();
         boolean Final = true;
         int k = 0;
@@ -39,7 +39,7 @@ public class TecladoRoto {
         for (String a: texto) {
             textoFinal+= a;
         }
-        return textoFinal;
+        System.out.println(textoFinal);
     }
 }
 
