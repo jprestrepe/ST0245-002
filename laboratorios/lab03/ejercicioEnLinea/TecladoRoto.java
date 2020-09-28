@@ -1,8 +1,7 @@
-Archivo adicional para permitir la creación de carpetas
-   import java.util.*;
+import java.util.*;
+
 public class TecladoRoto {
 
-//punto 2.1
     public static void brokenKb(String s) {
         LinkedList<String> texto = new LinkedList<>();
         boolean Final = true;
@@ -29,7 +28,6 @@ public class TecladoRoto {
                 Final = true;
             }
         }
-
         if (Final) {
             texto.addLast(s.substring(k));
         } else {
@@ -42,8 +40,3 @@ public class TecladoRoto {
         System.out.println(textoFinal);
     }
 }
-
-//punto 3.3
- el codigo tiene complejidad O(n)
- //punto 3.4
- Decimos que el codigo teien complejidad de O(n) porque en el codigo solo hay un ciclo, ya que no hay mas ciclos dentro del ciclo, ni nada que haga que la complejidad sea mayor a la del ciclo, en conclusión se puede decir que la comlejidad es O(n)
