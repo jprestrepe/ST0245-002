@@ -1,12 +1,21 @@
-public class Dato2{
+public class Estudiante {
 
-    String linea;
-    public Dato2(String linea){
-        this.linea=linea;
+    String[] estudiante;
+
+    // public ArrayList<String[]>estudiantes;
+    public Estudiante(String[] base) {
+        this.estudiante = base;
     }
-    public String getLinea(){
-    return linea;
+
+    public void setEstudiante(String[] estudiante) {
+        this.estudiante = estudiante;
+        // estudiantes.add(estudiante);
     }
+
+    public String[] getEstudiante() {
+        return estudiante;
+    }
+
 }
 
 
