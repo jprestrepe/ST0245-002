@@ -31,89 +31,69 @@ public class Dato2{
 *@Restrepo y Sanchez.
 *@Agosto/2020
 */
-import java.util.*;
 import java.io.*;
+import java.util.*;
+import javax.swing.JOptionPane;
 
 public class ColeccionDatos {
+    float giniPonderado;
+    int contador = 0;// hará el trabajo de contar las filas que hay en el .txt
+    int columnas = 0;// contará cuantos datos hay por estudiante
+    Object[][] arreglo;
+    String[] tmpColumn;
+    double[] contenedorDDatos;//sirve para contener los datos de la columna deseada y calcular el gini ponderado
+    public ArrayList<String[]> estudiantes;
 
-
-    public static ArrayList<Dato2>arreglo;
-    int contador = 0;
-
-    /**
-     * Constructor de la clase ColeccionDatos. Inicializamos el ArrayList
-     */
+    // crear un arreglo con n numero de filas(las que lea)
+    // y con m columnas(las que lea x2)
     public ColeccionDatos() {
-        arreglo= new ArrayList<>();
+        estudiantes = new ArrayList<>();
     }
 
-    /**
-     * Este método lee un archivo indicado por el usuario que se guarda en el disco.
-     * Los datos son almacenados en el ArrayList.
-     *
-     * @param nombreArchivo (nombre del archivo que se quiere leer)
-     * @throws FileNotFoundException excepcion determinada en caso de que no exista
-     *                               el archivo a leer solicitado por el usuario
+    /*
+     * este metodo funciona para leer y definir el tamaño del arreglo
      */
-    public void LecturaArchivo(String Archivo) throws FileNotFoundException {
+    protected void LecturaArchivo(String Archivo) throws FileNotFoundException {
         Scanner Dato0 = new Scanner(new File(Archivo));
-
+        String aux;
+        String aux2;
         while (Dato0.hasNextLine()) {
             String line = Dato0.nextLine();
+            line = line.replace(" ", "");
+            line = line.replace(";;", ";vacio;");
+            line = line.replace(";;", ";vacio;");
             line = line.replace(";", " ");
-
             Scanner lineScan = new Scanner(line);
-            String linea = lineScan.next();
-
-            Dato2 d = new Dato2(linea);
-            arreglo.add(d);
+            if (contador == 0) {
+                do {
+                    columnas++;
+                    aux = lineScan.next();
+                } while (lineScan.hasNext());
+            }
+            tmpColumn = new String[columnas];
+            int i = 0;
+            if (contador > 0) {
+                do {
+                    aux2 = lineScan.next();
+                    tmpColumn[i] = aux2;
+                    i++;
+                } while (lineScan.hasNext());
+                Estudiante cd = new Estudiante(tmpColumn);
+                estudiantes.add(tmpColumn);
+            }
             contador++;
             lineScan.close();
+
         }
-        System.out.println("Fueron leídos: " + contador + " datos de manera correcta");
-        
-    Dato0.close();
-    }
-
-    /**
-     * metodo que guarda la coleccion de datos en el disco
-     * 
-     * @param nombreArchivo (referencia del archivo a escribir)
-     * @trows FileNotFoundException
-     */
-    public void escribirArchivo(String nombreArchivo) throws FileNotFoundException {
-        PrintStream out = new PrintStream(new File(nombreArchivo));
-        for (Dato2 d : arreglo) {
-            out.println(d.getLinea());
+        arreglo = new String[contador - 1][columnas];// contador][columnas];
+        for (int i = 0; i < contador - 1; i++) {
+            arreglo[i] = estudiantes.get(i);
         }
-        out.close();
+        contador = contador - 1;
+        System.out.println("Fueron encontrados: " + contador + " estudiantes de manera correcta, y cada uno tiene: "
+                + columnas + " datos");
+        Dato0.close();
     }
-
-    public void GuardarArchivo(String nombreTexto) throws FileNotFoundException {
-        PrintStream out = new PrintStream(new File(nombreTexto));
-        for (Dato2 d : arreglo) {
-            out.println(d.getLinea());
-        }
-        out.close();
-    }
-
-    /**
-     * metodo estatico que retorna el arreglo de datos
-     */
-    public static ArrayList<Dato2> getDato() {
-        return arreglo;
-    }
-
-    /**
-     * metodo que realiza la impresion de la coleccion de datos
-     */
-    public void imprimir() {
-        for (Dato2 d : arreglo) {
-            arreglo.forEach(value -> System.out.println(value));
-        }
-    }
-}
-
 
 
 
