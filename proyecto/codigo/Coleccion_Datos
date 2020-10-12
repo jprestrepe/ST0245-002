@@ -45,29 +45,7 @@ import java.util.*;
 import javax.swing.JOptionPane;
 
 public class ColeccionDatos {
-    float giniPonderado;
-    int contador = 0;// hará el trabajo de contar las filas que hay en el .txt
-    int columnas = 0;// contará cuantos datos hay por estudiante
-    Object[][] arreglo;
-    String[] tmpColumn;
-    double[] contenedorDDatos;//sirve para contener los datos de la columna deseada y calcular el gini ponderado
-    public ArrayList<String[]> estudiantes;
-
-    // crear un arreglo con n numero de filas(las que lea)
-    // y con m columnas(las que lea x2)
-    public ColeccionDatos() {
-        estudiantes = new ArrayList<>();
-    }
-
-    /*
-     * este metodo funciona para leer y definir el tamaño del arreglo
-     */
-import java.io.*;
-import java.util.*;
-import javax.swing.JOptionPane;
-
-public class ColeccionDatos {
-    float giniPonderado;
+    double giniPonderado;
     int contador = 0;// hará el trabajo de contar las filas que hay en el .txt
     int columnas = 0;// contará cuantos datos hay por estudiante
     String[][] arreglo;
@@ -133,10 +111,10 @@ public class ColeccionDatos {
         Dato0.close();
     }
 
-    public float calcularGiniPonderado(int posDato){
+    public double calcularGiniPonderado(int posDato){
         posDato=posDato-1;//para cuando el usuario busque no le toque empezar desde 0
-        float p0;
-        float p1;
+        double p0;
+        double p1;
         
         int a=0;
         int b=0;
@@ -147,20 +125,18 @@ public class ColeccionDatos {
             contenedorDDatos[j]=arreglo[j][posDato];
         }
         pivote=contenedorDDatos[0];
-        for(int j=0;j<contenedorDDatos.length-1;j++){
+        for(int j=0;j<contenedorDDatos.length;j++){
             if(contenedorDDatos[j].equals(pivote)){
                 a++;
             }else b++;
         }
-        p0=(float)(a/a+b);
-        p1=(float)(b/a+b);
-        giniPonderado=(float)(1-(Math.pow(p0,2)+Math.pow(p1,2)));
+        p0=(a/a+b);
+        p1=(b/a+b);
+        giniPonderado=1-((Math.pow(p0,2)+Math.pow(p1,2)));
         System.out.println("el gini ponderado es: "+giniPonderado);
         return giniPonderado;
     }
 }
-
-
 
 
 
