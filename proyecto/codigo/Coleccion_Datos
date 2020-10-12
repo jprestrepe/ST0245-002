@@ -27,12 +27,6 @@ public class Estudiante {
 
 
 
-
-
-
-
-
-
 /**
 *Clase ColeccionDatos.
 *En esta clase se crea y almacena una colección de datos.
@@ -45,12 +39,13 @@ import java.util.*;
 import javax.swing.JOptionPane;
 
 public class ColeccionDatos {
-    double giniPonderado;
+    float giniPonderado;
     int contador = 0;// hará el trabajo de contar las filas que hay en el .txt
     int columnas = 0;// contará cuantos datos hay por estudiante
     String[][] arreglo;
     String[] tmpColumn;
-    String[] contenedorDDatos;//sirve para contener los datos de la columna deseada y calcular el gini ponderado
+    String[] contenedorDDatos;// sirve para contener los datos de la columna deseada y calcular el gini
+                              // ponderado
     public ArrayList<String[]> estudiantes;
 
     // crear un arreglo con n numero de filas(las que lea)
@@ -66,7 +61,7 @@ public class ColeccionDatos {
         Scanner Dato0 = new Scanner(new File(Archivo));
         String aux;
         String aux2;
-        double tiempoLec=System.currentTimeMillis();
+        double tiempoLec = System.currentTimeMillis();
         while (Dato0.hasNextLine()) {
             String line = Dato0.nextLine();
             line = line.replace(" ", "");
@@ -95,45 +90,45 @@ public class ColeccionDatos {
             lineScan.close();
 
         }
-        tiempoLec=System.currentTimeMillis()-tiempoLec;
-        System.out.println("el tiempo para el metodo para leer y agregar los datos para cada estuidante es: "+tiempoLec);
+        tiempoLec = System.currentTimeMillis() - tiempoLec;
+        System.out.println(
+                "el tiempo para el metodo para leer y agregar los datos para cada estuidante es: " + tiempoLec);
         arreglo = new String[contador - 1][columnas];// contador][columnas];
-        
-        double tiempoAgreFilas=System.currentTimeMillis();
-        for (int i = 0; i < contador - 1; i++) {//asignar cada estudiante al arreglo
+        double tiempoAgreFilas = System.currentTimeMillis();
+        for (int i = 0; i < contador - 1; i++) {// asignar cada estudiante al arreglo
             arreglo[i] = estudiantes.get(i);
         }
-        tiempoAgreFilas=System.currentTimeMillis()-tiempoAgreFilas;
-        System.out.println("el tiempo para agregar cada estudiante a la matriz es de: "+tiempoAgreFilas);
+        tiempoAgreFilas = System.currentTimeMillis() - tiempoAgreFilas;
+        System.out.println("el tiempo para agregar cada estudiante a la matriz es de: " + tiempoAgreFilas);
         contador = contador - 1;
         System.out.println("Fueron encontrados: " + contador + " estudiantes de manera correcta, y cada uno tiene: "
-                + columnas + " datos");        
+                + columnas + " datos");
         Dato0.close();
     }
 
-    public double calcularGiniPonderado(int posDato){
-        posDato=posDato-1;//para cuando el usuario busque no le toque empezar desde 0
-        double p0;
-        double p1;
-        
-        int a=0;
-        int b=0;
+    public double calcularGiniPonderado(int posDato) {
+        posDato = posDato - 1;// para cuando el usuario busque no le toque empezar desde 0
+        float p0 = 0;
+        float p1 = 0;
+
+        int a = 0;
+        int b = 0;
         String pivote;
-        contenedorDDatos=new String[contador];
-        //Arrays.deepToString(arreglo);
-        for (int j=0;j<contador;j++){
-            contenedorDDatos[j]=arreglo[j][posDato];
+        contenedorDDatos = new String[contador];
+        for (int j = 0; j < contador; j++) {
+            contenedorDDatos[j] = arreglo[j][posDato];
         }
-        pivote=contenedorDDatos[0];
-        for(int j=0;j<contenedorDDatos.length;j++){
-            if(contenedorDDatos[j].equals(pivote)){
+        pivote = contenedorDDatos[0];
+        for (int j = 0; j < contenedorDDatos.length; j++) {
+            if (contenedorDDatos[j].equals(pivote)) {
                 a++;
-            }else b++;
+            } else
+                b++;
         }
-        p0=(a/a+b);
-        p1=(b/a+b);
-        giniPonderado=1-((Math.pow(p0,2)+Math.pow(p1,2)));
-        System.out.println("el gini ponderado es: "+giniPonderado);
+        p0 = (float) a / (a+b);
+        p1 = (float) b / (a + b);
+        giniPonderado = (float) (1 - ((Math.pow(p0, 2) + Math.pow(p1, 2))));
+        System.out.println("el gini ponderado es: " + giniPonderado);
         return giniPonderado;
     }
 }
@@ -146,9 +141,8 @@ public class ColeccionDatos {
 
 
 
-
-
-
+/*Este metodo aun está en dllo, no usar
+*
 import java.util.*;
 import java.io.*;
 import java.util.ArrayList;
@@ -235,3 +229,4 @@ public class menu22{
 
     }
 }
+*/
