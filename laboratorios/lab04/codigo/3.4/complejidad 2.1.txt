@@ -1,1 +1,0 @@
-ya que tenemos que recorrer todo el arbol para imprimir el orden, la complejidad en el peor de los casos sería O(n)
