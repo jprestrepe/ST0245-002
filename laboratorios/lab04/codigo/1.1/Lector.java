@@ -39,7 +39,7 @@ public class Lector {
             lineScan.close();
         }
         Dato1.close();
-        System.out.println("Fueron leídos: " + contador + " datos de manera correcta");
+        System.out.println("Fueron leídos: " + (contador-1) + " datos de manera correcta");
         getMinMax();
     }
 
