@@ -1,0 +1,13 @@
+En el ejercicio 2.1 nos piden un algoritmo que pueda encontrar el recorrido pre-orden
+    lo que hacemos en el codigo del ejercicio 2.1 es crear la clase nodo, acá tendremos todo para crear el arbol binario
+    luego, creamos diferentes metodos en los cuales podremos:
+        insertar un valor
+        buscar si existe un valor en especifico
+        imprimir los numero mayores al deseado
+        imprimir el recorrido InOrder
+        imprimir el recorrido PreOrder:
+            Orden en el algoritmo:
+                1-imprimir el valor del nodo actual
+                2-moverse al nodo izquierdo (si es verdad que vuelva a empezar el metodo)
+                3-moverse al nodo derecho (si es verdad que vuelva a empezar el metodo)
+            lo que se hace a diferencia del InOrder, el imprimir (System.out.print) está al principio, ya que primero vamos a imprimir la cabeza, por lo tanto, cuando no hayan "cabezas" vamos a imprimir el nodo de la izquierda y luego el de la derecha
