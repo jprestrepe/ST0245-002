@@ -22,17 +22,19 @@ public class Lector {
             line = line.replace(",", " ");
 
             Scanner lineScan = new Scanner(line);
-            String aux = lineScan.next();
-            double lat = Double.parseDouble(aux);
-            x.addFirst(lat);
-            aux = lineScan.next();
-            double lon = Double.parseDouble(aux);
-            y.addFirst(lon);
-            aux = lineScan.next();
-            double alt = Double.parseDouble(aux);
-            z.addFirst(alt);
-            Abejas d = new Abejas(lat, lon, alt);
-            ab.addFirst(d);
+            if (contador > 0) {
+                String aux = lineScan.next();
+                double lat = Double.parseDouble(aux);
+                x.addFirst(lat);
+                aux = lineScan.next();
+                double lon = Double.parseDouble(aux);
+                y.addFirst(lon);
+                aux = lineScan.next();
+                double alt = Double.parseDouble(aux);
+                z.addFirst(alt);
+                Abejas d = new Abejas(lat, lon, alt);
+                ab.addFirst(d);
+            }
             contador++;
             lineScan.close();
         }
