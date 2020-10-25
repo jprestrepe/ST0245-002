@@ -10,4 +10,4 @@ En el ejercicio 2.1 nos piden un algoritmo que pueda encontrar el recorrido pre-
                 1-imprimir el valor del nodo actual
                 2-moverse al nodo izquierdo (si es verdad que vuelva a empezar el metodo)
                 3-moverse al nodo derecho (si es verdad que vuelva a empezar el metodo)
-            lo que se hace a diferencia del InOrder, el imprimir (System.out.print)al principio, ya que primero vamos a imprimir la cabeza, por lo tanto, cuando no hayan "cabezas" vamos a imprimir el nodo de la izquierda y luego el de la derecha
+            lo que se hace a diferencia del InOrder, es imprimir (System.out.print)el cual está al principio, ya que primero vamos a imprimir la cabeza, por lo tanto, cuando no hayan "cabezas" vamos a imprimir el nodo de la izquierda y luego el de la derecha
