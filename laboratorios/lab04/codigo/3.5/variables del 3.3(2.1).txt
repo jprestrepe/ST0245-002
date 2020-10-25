@@ -1,0 +1,1 @@
+la unica variable de la cual podremos hablar es de n, donde n es el numero de elementos del arbol binario ya que para poder imprimir el orden deseado, debemos de recorrer dato por dato
