@@ -57,9 +57,9 @@ public class Lector {
         mins.add(minlat);
         mins.add(minlon);
         mins.add(minalt);
-        double midD = (minlat - maxlat) / 2;
-        double midW = (maxlon - minlon) / 2;
-        double midH = (maxalt - minalt) / 2;
+        double midD = (minlat - maxlat);
+        double midW = (maxlon - minlon);
+        double midH = (maxalt - minalt);
         double diagonal = Math.sqrt(Math.pow((midD)*111325, 2) + Math.pow((midW)*111325, 2)+Math.pow((midH),2));
         //double diagonal = Math.sqrt(Math.pow(ph, 2) + Math.pow((midH), 2));
         if (diagonal > 100) {
