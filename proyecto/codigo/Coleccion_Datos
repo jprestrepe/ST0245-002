@@ -27,36 +27,7 @@ public class Estudiante {
 
 
 
-/**
-*Clase ColeccionDatos.
-*En esta clase se crea y almacena una colección de datos.
-*Se maneja un ArrayList.
-*@Restrepo y Sanchez.
-*@Agosto/2020
-*/
-import java.io.*;
-import java.util.*;
-import javax.swing.JOptionPane;
 
-public class ColeccionDatos {
-    float giniPonderado;
-    int contador = 0;// hará el trabajo de contar las filas que hay en el .txt
-    int columnas = 0;// contará cuantos datos hay por estudiante
-    String[][] arreglo;
-    String[] tmpColumn;
-    String[] contenedorDDatos;// sirve para contener los datos de la columna deseada y calcular el gini
-                              // ponderado
-    public ArrayList<String[]> estudiantes;
-
-    // crear un arreglo con n numero de filas(las que lea)
-    // y con m columnas(las que lea x2)
-    public ColeccionDatos() {
-        estudiantes = new ArrayList<>();
-    }
-
-    /*
-     * este metodo funciona para leer y definir el tamaño del arreglo
-     */
 import java.io.*;
 import java.util.*;
 import javax.swing.JOptionPane;
