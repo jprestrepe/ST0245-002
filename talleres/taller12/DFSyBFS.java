@@ -1,4 +1,6 @@
- /**
+import java.util.LinkedList;
+
+/**
  * @author Juan Pablo Restrepo, Juan José Sánchez
  */
     
